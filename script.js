@@ -29,15 +29,18 @@ function getCompChoice () {
     }
 
     return "BeepBoop! RPS Bot has chosen " + result + "!";
+    return result;
 }
 
+// SHOW user computer choice
 // Will need to be changed when update to GUI. 
 
 console.log(getCompChoice());
+console.log(result);
 
-let compChoice = "SCISSORS";
+let compChoice = result;
 
-// SHOW user computer choice
+
 
 console.log(compChoice);
 
