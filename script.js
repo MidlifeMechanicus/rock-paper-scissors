@@ -9,6 +9,27 @@ let userChoice = "SCISSORS";
     // ELSE...
         // SHOW user choice
 // GET random computer choice of rock, paper or scissors
+
+let test = 3;
+
+console.log(test);
+
+function getCompChoice () {
+
+    if (test === 1) {
+        result = "ROCK";
+    } else if (test === 2) {
+        result = "PAPER";
+    } else {
+        // test === 3
+        result = "SCISSORS";
+    }
+
+    return result;
+}
+
+console.log(getCompChoice());
+
 function getRandom() {
     const minValue = Math.ceil(1);
     const maxValue = Math.floor(3);
