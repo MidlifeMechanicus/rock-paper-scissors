@@ -18,22 +18,6 @@ if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS"
 
 console.log(userChoiceConfirm);
 
-console.log(choiceValid);
-
-
-
-
-
-
-
-// let userChoice = "SCISSORS";
-
-// CHECK choice is valid
-    // IF choice not valid
-        // SHOW user invalid choice
-        // THEN return to start
-    // ELSE...
-        // SHOW user choice
 // GET random computer choice of rock, paper or scissors
 
 
@@ -108,3 +92,5 @@ console.log (compete());
 } else {}
 
 // GET play again?
+
+console.log("If you would like to try again, please refresh the page.");
