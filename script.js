@@ -103,6 +103,8 @@ function compete() {
 // SHOW result
 // This will need to be replaced once the game moves beyond the console
 
+if (choiceValid == true) {
 console.log (compete());
+} else {}
 
 // GET play again?
