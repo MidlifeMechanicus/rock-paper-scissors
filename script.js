@@ -7,7 +7,10 @@
         // SHOW user choice
 // GET random computer choice of rock, paper or scissors
 // SHOW user computer choice
-// CALCULATE result by
+let userChoice = "ROCK";
+let compChoice = "PAPER";
+
+console.log (compChoice);
     // IF user choice rock
         // AND computer choice rock
             // THEN result is tie
