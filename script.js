@@ -1,4 +1,7 @@
 // GET user choice of rock, paper, or scissors
+
+let userChoice = "SCISSORS";
+
 // CHECK choice is valid
     // IF choice not valid
         // SHOW user invalid choice
@@ -6,9 +9,19 @@
     // ELSE...
         // SHOW user choice
 // GET random computer choice of rock, paper or scissors
-// SHOW user computer choice
-let userChoice = "SCISSORS";
+function getRandom() {
+    const minValue = Math.ceil(1);
+    const maxValue = Math.floor(3);
+    return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
+}
+
+console.log(getRandom());
+
 let compChoice = "SCISSORS";
+
+// SHOW user computer choice
+
+console.log(compChoice);
 
 // CALCULATE result based on userChoice and compChoice
 
@@ -40,34 +53,10 @@ function compete() {
 
     return result;
 }
-console.log (compete());
-    // IF user choice rock
-        // AND computer choice rock
-            // THEN result is tie
-        // AND computer choice paper
-            // THEN result is computer win
-        // AND computer choice scissors
-            // THEN result is user win
-    // IF ELSE user choice paper
-        // AND computer choice rock
-            // THEN result is user win
-        // AND computer choice paper
-            // THEN result is tie
-        // AND computer choice scissors
-            // THEN result is computer win
-    // ELSE user choice scissors
-        // AND computer choice rock
-            // THEN result computer win
-        // AND computer choice paper
-            // THEN result is user win
-        // AND computer choice scissors
-            // THEN result is tie
+
 // SHOW result
-// SHOW message
-    // IF result is tie
-        // THEN message is tie
-    // ELSE IF result is win
-        // THEN message is congratulations
-    // ELSE result is loss
-        // THEN message is encouragement
+// This will need to be replaced once the game moves beyond the console
+
+console.log (compete());
+
 // GET play again?
