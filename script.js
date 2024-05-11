@@ -3,27 +3,29 @@
 let userInput = prompt("Please choose rock, paper, or scissors.");
 
 console.log(userInput);
-let userChoi = userInput.toUpperCase();
+let userChoice = userInput.toUpperCase();
 
-console.log(userChoi);
+console.log(userChoice);
 
 // CHECK input is valid
 
-if (userChoi === "ROCK" || userChoi === "PAPER" || userChoi === "SCISSORS") {
-    userChoiceConfirm = "You have chosen " + userChoi + "!";
+if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS") {
+    userChoiceConfirm = "You have chosen " + userChoice + "!";
 } else {
-    userChoiceConfirm = "That is not a valid choice!"
+    userChoiceConfirm = userChoice + " is not a valid choice!"
 }
-
-console.log(userChoiceConfirm);
 
 // SHOW response to user
 
+console.log(userChoiceConfirm);
 
 
 
 
-let userChoice = "SCISSORS";
+
+
+
+// let userChoice = "SCISSORS";
 
 // CHECK choice is valid
     // IF choice not valid
