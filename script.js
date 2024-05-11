@@ -2,10 +2,7 @@
 
 let userInput = prompt("Please choose rock, paper, or scissors.");
 
-console.log(userInput);
 let userChoice = userInput.toUpperCase();
-
-console.log(userChoice);
 
 // CHECK input is valid
 
@@ -59,7 +56,6 @@ function getCompChoice () {
         }
 
         return "BeepBoop! RPS Bot has chosen " + result + "!";
-        return result;
     } else {
         return result = "RPS Bot won't choose until you have!";
     }
@@ -69,13 +65,8 @@ function getCompChoice () {
 // Will need to be changed when update to GUI. 
 
 console.log(getCompChoice());
-console.log(result);
 
 let compChoice = result;
-
-
-
-console.log(compChoice);
 
 // CALCULATE result based on userChoice and compChoice
 
