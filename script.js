@@ -10,7 +10,17 @@
 let userChoice = "ROCK";
 let compChoice = "PAPER";
 
-console.log (compChoice);
+function compete() {
+    if (userChoice === "ROCK" && compChoice === "ROCK") {
+        result = "It's a tie!";
+    } else if (userChoice === "ROCK" && compChoice === "PAPER") {
+        result = "You lose!";
+    } else {
+        result = "You win";
+    }
+    return result;
+}
+console.log (compete());
     // IF user choice rock
         // AND computer choice rock
             // THEN result is tie
