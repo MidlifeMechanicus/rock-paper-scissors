@@ -10,14 +10,18 @@ console.log(userChoice);
 // CHECK input is valid
 
 if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS") {
-    userChoiceConfirm = "You have chosen " + userChoice + "!";
+    userChoiceConfirm = "You have chosen " + userChoice + "!"
+    choiceValid = true;
 } else {
     userChoiceConfirm = userChoice + " is not a valid choice!"
+    choiceValid = false;
 }
 
 // SHOW response to user
 
 console.log(userChoiceConfirm);
+
+console.log(choiceValid);
 
 
 
@@ -92,9 +96,10 @@ function compete() {
         result = loss;
     } else if (userChoice === "SCISSORS" && compChoice === "PAPER") {
         result = win;
-    } else {
-        // userChoice === "SCISSORS"  && compChoice === "SCISSORS"
+    } else if (userChoice === "SCISSORS" && compChoice === "SCISSORS") {
         result = tie;
+    } else {
+        result = "";
     }
 
     return result;
