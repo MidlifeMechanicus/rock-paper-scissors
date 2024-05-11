@@ -7,17 +7,37 @@
         // SHOW user choice
 // GET random computer choice of rock, paper or scissors
 // SHOW user computer choice
-let userChoice = "ROCK";
-let compChoice = "PAPER";
+let userChoice = "SCISSORS";
+let compChoice = "SCISSORS";
+
+// CALCULATE result based on userChoice and compChoice
 
 function compete() {
+    let win = "You win!";
+    let loss = "You lose!";
+    let tie = "It's a tie!";
+
     if (userChoice === "ROCK" && compChoice === "ROCK") {
-        result = "It's a tie!";
+        result = tie;
     } else if (userChoice === "ROCK" && compChoice === "PAPER") {
-        result = "You lose!";
+        result = loss;
+    } else if (userChoice === "ROCK" && compChoice === "SCISSORS") {
+        result = win;
+    } else if (userChoice === "PAPER" && compChoice === "ROCK") {
+        result = win;
+    } else if (userChoice === "PAPER" && compChoice === "PAPER") {
+        result = tie;
+    } else if (userChoice === "PAPER" && compChoice === "SCISSORS") {
+        result = loss;
+    } else if (userChoice === "SCISSORS" && compChoice === "ROCK") {
+        result = loss;
+    } else if (userChoice === "SCISSORS" && compChoice === "PAPER") {
+        result = win;
     } else {
-        result = "You win";
+        // userChoice === "SCISSORS"  && compChoice === "SCISSORS"
+        result = tie;
     }
+
     return result;
 }
 console.log (compete());
