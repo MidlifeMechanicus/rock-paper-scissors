@@ -41,24 +41,28 @@ console.log(choiceValid);
 
 
 function getCompChoice () {
+    if (choiceValid == true) {
 
-    function getRandom() {
-        const minValue = Math.ceil(1);
-        const maxValue = Math.floor(3);
-        return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
-    }
+        function getRandom() {
+            const minValue = Math.ceil(1);
+            const maxValue = Math.floor(3);
+            return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
+        }
 
-    if (getRandom() === 1) {
-        result = "ROCK";
-    } else if (getRandom() === 2) {
-        result = "PAPER";
+        if (getRandom() === 1) {
+            result = "ROCK";
+        } else if (getRandom() === 2) {
+            result = "PAPER";
+        } else {
+            // test === 3
+            result = "SCISSORS";
+        }
+
+        return "BeepBoop! RPS Bot has chosen " + result + "!";
+        return result;
     } else {
-        // test === 3
-        result = "SCISSORS";
+        return result = "RPS Bot won't choose until you have!";
     }
-
-    return "BeepBoop! RPS Bot has chosen " + result + "!";
-    return result;
 }
 
 // SHOW user computer choice
