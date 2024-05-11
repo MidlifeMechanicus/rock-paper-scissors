@@ -1,5 +1,28 @@
 // GET user choice of rock, paper, or scissors
 
+let userInput = prompt("Please choose rock, paper, or scissors.");
+
+console.log(userInput);
+let userChoi = userInput.toUpperCase();
+
+console.log(userChoi);
+
+// CHECK input is valid
+
+if (userChoi === "ROCK" || userChoi === "PAPER" || userChoi === "SCISSORS") {
+    userChoiceConfirm = "You have chosen " + userChoi + "!";
+} else {
+    userChoiceConfirm = "That is not a valid choice!"
+}
+
+console.log(userChoiceConfirm);
+
+// SHOW response to user
+
+
+
+
+
 let userChoice = "SCISSORS";
 
 // CHECK choice is valid
