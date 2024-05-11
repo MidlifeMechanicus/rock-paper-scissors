@@ -28,18 +28,12 @@ function getCompChoice () {
         result = "SCISSORS";
     }
 
-    return result;
+    return "BeepBoop! RPS Bot has chosen " + result + "!";
 }
+
+// Will need to be changed when update to GUI. 
 
 console.log(getCompChoice());
-
-function getRandom() {
-    const minValue = Math.ceil(1);
-    const maxValue = Math.floor(3);
-    return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
-}
-
-console.log(getRandom());
 
 let compChoice = "SCISSORS";
 
