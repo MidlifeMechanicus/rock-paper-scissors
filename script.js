@@ -10,15 +10,18 @@ let userChoice = "SCISSORS";
         // SHOW user choice
 // GET random computer choice of rock, paper or scissors
 
-let test = 3;
-
-console.log(test);
 
 function getCompChoice () {
 
-    if (test === 1) {
+    function getRandom() {
+        const minValue = Math.ceil(1);
+        const maxValue = Math.floor(3);
+        return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
+    }
+
+    if (getRandom() === 1) {
         result = "ROCK";
-    } else if (test === 2) {
+    } else if (getRandom() === 2) {
         result = "PAPER";
     } else {
         // test === 3
