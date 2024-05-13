@@ -7,8 +7,10 @@ function getHumanChoice () {
     if (humanChoice === "ROCK" || humanChoice === "PAPER" || humanChoice === "SCISSORS") {
         return humanChoice;
     } else {
-        humanChoice = "an invalid option";
-        return humanChoice;
+        // humanChoice = "an invalid option";
+        // return humanChoice;
+        alert("Your choice is not a valid option. Please try again.");
+        console.log(getHumanChoice());
     }
 }
 
