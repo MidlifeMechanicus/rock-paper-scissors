@@ -84,6 +84,12 @@ function compete() {
     return result;
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
+console.log(humanScore);
+console.log(computerScore);
+
 // SHOW result
 // This will need to be replaced once the game moves beyond the console
 
