@@ -75,8 +75,3 @@ let computerScore = 0;
 
 console.log(humanScore);
 console.log(computerScore);
-
-
-// GET play again?
-
-console.log("If you would like to try again, please refresh the page.");
