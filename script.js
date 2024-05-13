@@ -1,27 +1,27 @@
 // GET user choice of rock, paper, or scissors
 
-let userInput = prompt("Please choose rock, paper, or scissors.");
+function getHumanChoice () {
+    let userInput = prompt("Please choose rock, paper, or scissors.");
+    let userChoice = userInput.toUpperCase();
 
-let userChoice = userInput.toUpperCase();
-
-// CHECK input is valid
-
-if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS") {
-    userChoiceConfirm = "You have chosen " + userChoice + "!"
-    choiceValid = true;
-} else {
-    userChoiceConfirm = userChoice + " is not a valid choice!"
-    choiceValid = false;
+    if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS") {
+        userChoiceConfirm = "You have chosen " + userChoice + "!";
+        choiceValid = true;
+        return userChoiceConfirm;
+    } else {
+        userChoiceConfirm = userChoice + " is not a valid choice!";
+        choiceValid = false;
+        return userChoiceConfirm;
+    }
 }
 
-// SHOW response to user
+console.log(getHumanChoice());
 
-console.log(userChoiceConfirm);
 
 // GET random computer choice of rock, paper or scissors
 
 
-function getCompChoice () {
+function getComputerChoice () {
     if (choiceValid == true) {
 
         function getRandom() {
@@ -48,7 +48,7 @@ function getCompChoice () {
 // SHOW user computer choice
 // Will need to be changed when update to GUI. 
 
-console.log(getCompChoice());
+console.log(getComputerChoice());
 
 let compChoice = result;
 
