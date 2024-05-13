@@ -1,25 +1,18 @@
 // GET user choice of rock, paper, or scissors
 
 function getHumanChoice () {
-    let userInput = prompt("Please choose rock, paper, or scissors.");
-    let userChoice = userInput.toUpperCase();
+    let humanInput = prompt("Please choose rock, paper, or scissors.");
+    let humanChoice = humanInput.toUpperCase();
 
-    if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS") {
-        userChoiceConfirm = "You have chosen " + userChoice + "!";
-        choiceValid = true;
-        return userChoiceConfirm;
+    if (humanChoice === "ROCK" || humanChoice === "PAPER" || humanChoice === "SCISSORS") {
+        return humanChoice;
     } else {
-        userChoiceConfirm = userChoice + " is not a valid choice!";
-        choiceValid = false;
-        return userChoiceConfirm;
+        humanChoice = "an invalid option";
+        return humanChoice;
     }
 }
 
-console.log(getHumanChoice());
-
-
-// GET random computer choice of rock, paper or scissors
-
+console.log("You have chosen " + getHumanChoice() + "!");
 
 function getComputerChoice () {
     if (choiceValid == true) {
@@ -52,30 +45,30 @@ console.log(getComputerChoice());
 
 let compChoice = result;
 
-// CALCULATE result based on userChoice and compChoice
+// CALCULATE result based on humanChoice and compChoice
 
-function compete() {
+function playRound() {
     let win = "You win!";
     let loss = "You lose!";
     let tie = "It's a tie!";
 
-    if (userChoice === "ROCK" && compChoice === "ROCK") {
+    if (humanChoice === "ROCK" && compChoice === "ROCK") {
         result = tie;
-    } else if (userChoice === "ROCK" && compChoice === "PAPER") {
+    } else if (humanChoice === "ROCK" && compChoice === "PAPER") {
         result = loss;
-    } else if (userChoice === "ROCK" && compChoice === "SCISSORS") {
+    } else if (humanChoice === "ROCK" && compChoice === "SCISSORS") {
         result = win;
-    } else if (userChoice === "PAPER" && compChoice === "ROCK") {
+    } else if (humanChoice === "PAPER" && compChoice === "ROCK") {
         result = win;
-    } else if (userChoice === "PAPER" && compChoice === "PAPER") {
+    } else if (humanChoice === "PAPER" && compChoice === "PAPER") {
         result = tie;
-    } else if (userChoice === "PAPER" && compChoice === "SCISSORS") {
+    } else if (humanChoice === "PAPER" && compChoice === "SCISSORS") {
         result = loss;
-    } else if (userChoice === "SCISSORS" && compChoice === "ROCK") {
+    } else if (humanChoice === "SCISSORS" && compChoice === "ROCK") {
         result = loss;
-    } else if (userChoice === "SCISSORS" && compChoice === "PAPER") {
+    } else if (humanChoice === "SCISSORS" && compChoice === "PAPER") {
         result = win;
-    } else if (userChoice === "SCISSORS" && compChoice === "SCISSORS") {
+    } else if (humanChoice === "SCISSORS" && compChoice === "SCISSORS") {
         result = tie;
     } else {
         result = "";
@@ -94,7 +87,7 @@ console.log(computerScore);
 // This will need to be replaced once the game moves beyond the console
 
 if (choiceValid == true) {
-console.log (compete());
+console.log (playRound());
 } else {}
 
 // GET play again?
