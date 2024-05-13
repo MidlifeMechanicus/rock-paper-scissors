@@ -4,80 +4,75 @@ function getHumanChoice () {
     let humanInput = prompt("Please choose rock, paper, or scissors.");
     let humanChoice = humanInput.toUpperCase();
 
-    if (humanChoice === "ROCK" || humanChoice === "PAPER" || humanChoice === "SCISSORS") {
+    if (humanChoice == "ROCK" || humanChoice == "PAPER" || humanChoice == "SCISSORS") {
         return humanChoice;
     } else {
         // humanChoice = "an invalid option";
         // return humanChoice;
         alert("Your choice is not a valid option. Please try again.");
-        console.log(getHumanChoice());
+        getHumanChoice();
     }
 }
 
 console.log("You have chosen " + getHumanChoice() + "!");
 
 function getComputerChoice () {
-    if (choiceValid == true) {
-
-        function getRandom() {
-            const minValue = Math.ceil(1);
-            const maxValue = Math.floor(3);
-            return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
-        }
-
-        if (getRandom() === 1) {
-            result = "ROCK";
-        } else if (getRandom() === 2) {
-            result = "PAPER";
-        } else {
-            // test === 3
-            result = "SCISSORS";
-        }
-
-        return "BeepBoop! RPS Bot has chosen " + result + "!";
-    } else {
-        return result = "RPS Bot won't choose until you have!";
+    
+    function getRandom() {
+        const minValue = Math.ceil(1);
+        const maxValue = Math.floor(3);
+        return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
     }
+    
+    if (getRandom() == 1) {
+        computerChoice = "ROCK";
+    } else if (getRandom() == 2) {
+        computerChoice = "PAPER";
+    } else {
+        // test == 3
+        computerChoice = "SCISSORS";
+    }
+
+    return computerChoice;
 }
 
-// SHOW user computer choice
-// Will need to be changed when update to GUI. 
+console.log("BeepBoop! RPS Bot has chosen " + getComputerChoice() + "!");
 
-console.log(getComputerChoice());
-
-let compChoice = result;
-
-// CALCULATE result based on humanChoice and compChoice
-
-function playRound() {
+function playRound(humanChoice, computerChoice) {
     let win = "You win!";
     let loss = "You lose!";
     let tie = "It's a tie!";
 
-    if (humanChoice === "ROCK" && compChoice === "ROCK") {
+    if (humanChoice == "ROCK" && computerChoice == "ROCK") {
         result = tie;
-    } else if (humanChoice === "ROCK" && compChoice === "PAPER") {
+    } else if (humanChoice == "ROCK" && computerChoice == "PAPER") {
         result = loss;
-    } else if (humanChoice === "ROCK" && compChoice === "SCISSORS") {
+    } else if (humanChoice == "ROCK" && computerChoice == "SCISSORS") {
         result = win;
-    } else if (humanChoice === "PAPER" && compChoice === "ROCK") {
+    } else if (humanChoice == "PAPER" && computerChoice == "ROCK") {
         result = win;
-    } else if (humanChoice === "PAPER" && compChoice === "PAPER") {
+    } else if (humanChoice == "PAPER" && computerChoice == "PAPER") {
         result = tie;
-    } else if (humanChoice === "PAPER" && compChoice === "SCISSORS") {
+    } else if (humanChoice == "PAPER" && computerChoice == "SCISSORS") {
         result = loss;
-    } else if (humanChoice === "SCISSORS" && compChoice === "ROCK") {
+    } else if (humanChoice == "SCISSORS" && computerChoice == "ROCK") {
         result = loss;
-    } else if (humanChoice === "SCISSORS" && compChoice === "PAPER") {
+    } else if (humanChoice == "SCISSORS" && computerChoice == "PAPER") {
         result = win;
-    } else if (humanChoice === "SCISSORS" && compChoice === "SCISSORS") {
+    } else if (humanChoice == "SCISSORS" && computerChoice == "SCISSORS") {
         result = tie;
     } else {
-        result = "";
+        result = "?";
     }
 
     return result;
 }
+
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log (playRound(humanSelection, computerSelection));
 
 let humanScore = 0;
 let computerScore = 0;
@@ -85,12 +80,6 @@ let computerScore = 0;
 console.log(humanScore);
 console.log(computerScore);
 
-// SHOW result
-// This will need to be replaced once the game moves beyond the console
-
-if (choiceValid == true) {
-console.log (playRound());
-} else {}
 
 // GET play again?
 
