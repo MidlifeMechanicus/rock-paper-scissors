@@ -1,5 +1,3 @@
-// GET user choice of rock, paper, or scissors
-
 function getHumanChoice () {
     let humanInput = prompt("Please choose rock, paper, or scissors.");
     let humanChoice = humanInput.toUpperCase();
@@ -13,8 +11,6 @@ function getHumanChoice () {
         getHumanChoice();
     }
 }
-
-console.log("You have chosen " + getHumanChoice() + "!");
 
 function getComputerChoice () {
     
@@ -35,8 +31,6 @@ function getComputerChoice () {
 
     return computerChoice;
 }
-
-console.log("BeepBoop! RPS Bot has chosen " + getComputerChoice() + "!");
 
 function playRound(humanChoice, computerChoice) {
     let win = "You win!";
@@ -68,9 +62,11 @@ function playRound(humanChoice, computerChoice) {
     return result;
 }
 
-
 const humanSelection = getHumanChoice();
+console.log("You have chosen " + humanSelection + "!");
+
 const computerSelection = getComputerChoice();
+console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
 
 console.log (playRound(humanSelection, computerSelection));
 
