@@ -1,15 +1,20 @@
 function getHumanChoice () {
-    let humanInput = prompt("Please choose rock, paper, or scissors.");
-    let humanChoice = humanInput.toUpperCase();
 
-    if (humanChoice == "ROCK" || humanChoice == "PAPER" || humanChoice == "SCISSORS") {
+    let humanChoice = "";
+
+    do {
+        let humanInput = prompt("Please choose rock, paper, or scissors.");
+        let humanChoice = humanInput.toUpperCase();
+
+        if (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS") {
+            alert("Your choice is not a valid option. Please try again.");
+        } else {
         return humanChoice;
-    } else {
-        // humanChoice = "an invalid option";
-        // return humanChoice;
-        alert("Your choice is not a valid option. Please try again.");
-        getHumanChoice();
-    }
+        }
+    } 
+    while (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS");
+    
+    return humanChoice;
 }
 
 function getComputerChoice () {
