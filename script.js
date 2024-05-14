@@ -2,6 +2,8 @@ function playGame() {
 
 let humanScore = 0;
 let computerScore = 0;
+let gameNumber=0;
+let winner;
 
 function getHumanChoice () {
 
@@ -48,28 +50,37 @@ function playRound(humanChoice, computerChoice) {
     let tie = "It's a tie!";
 
     if (humanChoice == "ROCK" && computerChoice == "ROCK") {
+        gameNumber +=1;
         result = tie;
     } else if (humanChoice == "ROCK" && computerChoice == "PAPER") {
         computerScore +=1;
+        gameNumber +=1;
         result = loss;
     } else if (humanChoice == "ROCK" && computerChoice == "SCISSORS") {
         humanScore +=1;
+        gameNumber +=1;
         result = win;
     } else if (humanChoice == "PAPER" && computerChoice == "ROCK") {
         humanScore +=1;
+        gameNumber +=1;
         result = win;
     } else if (humanChoice == "PAPER" && computerChoice == "PAPER") {
+        gameNumber +=1;
         result = tie;
     } else if (humanChoice == "PAPER" && computerChoice == "SCISSORS") {
         computerScore +=1;
+        gameNumber +=1;
         result = loss;
     } else if (humanChoice == "SCISSORS" && computerChoice == "ROCK") {
         computerScore +=1;
+        gameNumber +=1;
         result = loss;
     } else if (humanChoice == "SCISSORS" && computerChoice == "PAPER") {
         humanScore +=1;
+        gameNumber +=1;
         result = win;
     } else if (humanChoice == "SCISSORS" && computerChoice == "SCISSORS") {
+        gameNumber +=1;
         result = tie;
     } else {
         result = "?";
@@ -77,7 +88,7 @@ function playRound(humanChoice, computerChoice) {
 
     return result;
 }
-    
+    do {
     const humanSelection = getHumanChoice();
     console.log("You have chosen " + humanSelection + "!");
 
@@ -87,7 +98,21 @@ function playRound(humanChoice, computerChoice) {
     console.log (playRound(humanSelection, computerSelection));
 
     console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
+    }
+    while (
+        gameNumber < 5
+    )
+
+    if (humanScore > computerScore) {
+        winner = "You win the game!"
+    } else if (humanScore < computerScore) {
+        winner = "RPS Bot wins the game!"
+    } else {
+        winner = "It's a tie game!"
+    }
+
+    return "The final score is: You " + humanScore + ", RPS Bot " + computerScore +"! " + winner;
 
 }
 
-playGame();
+console.log(playGame());
