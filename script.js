@@ -1,3 +1,5 @@
+function playGame() {
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -75,13 +77,17 @@ function playRound(humanChoice, computerChoice) {
 
     return result;
 }
+    
+    const humanSelection = getHumanChoice();
+    console.log("You have chosen " + humanSelection + "!");
 
-const humanSelection = getHumanChoice();
-console.log("You have chosen " + humanSelection + "!");
+    const computerSelection = getComputerChoice();
+    console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
 
-const computerSelection = getComputerChoice();
-console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
+    console.log (playRound(humanSelection, computerSelection));
 
-console.log (playRound(humanSelection, computerSelection));
+    console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
 
-console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
+}
+
+playGame();
