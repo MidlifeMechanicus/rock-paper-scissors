@@ -1,96 +1,118 @@
-// GET user choice of rock, paper, or scissors
+function playGame() {
 
-let userInput = prompt("Please choose rock, paper, or scissors.");
+let humanScore = 0;
+let computerScore = 0;
+let gameNumber=0;
+let winner;
 
-let userChoice = userInput.toUpperCase();
+function getHumanChoice () {
 
-// CHECK input is valid
+    let humanChoice = "";
 
-if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS") {
-    userChoiceConfirm = "You have chosen " + userChoice + "!"
-    choiceValid = true;
-} else {
-    userChoiceConfirm = userChoice + " is not a valid choice!"
-    choiceValid = false;
-}
+    do {
+        let humanInput = prompt("Please choose rock, paper, or scissors.");
+        let humanChoice = humanInput.toUpperCase();
 
-// SHOW response to user
-
-console.log(userChoiceConfirm);
-
-// GET random computer choice of rock, paper or scissors
-
-
-function getCompChoice () {
-    if (choiceValid == true) {
-
-        function getRandom() {
-            const minValue = Math.ceil(1);
-            const maxValue = Math.floor(3);
-            return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
-        }
-
-        if (getRandom() === 1) {
-            result = "ROCK";
-        } else if (getRandom() === 2) {
-            result = "PAPER";
+        if (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS") {
+            alert("Your choice is not a valid option. Please try again.");
         } else {
-            // test === 3
-            result = "SCISSORS";
+        return humanChoice;
         }
-
-        return "BeepBoop! RPS Bot has chosen " + result + "!";
-    } else {
-        return result = "RPS Bot won't choose until you have!";
-    }
+    } 
+    while (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS");
+    
+    return humanChoice;
 }
 
-// SHOW user computer choice
-// Will need to be changed when update to GUI. 
+function getComputerChoice () {
+    
+    function getRandom() {
+        const minValue = Math.ceil(1);
+        const maxValue = Math.floor(3);
+        return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
+    }
+    
+    if (getRandom() == 1) {
+        computerChoice = "ROCK";
+    } else if (getRandom() == 2) {
+        computerChoice = "PAPER";
+    } else {
+        // test == 3
+        computerChoice = "SCISSORS";
+    }
 
-console.log(getCompChoice());
+    return computerChoice;
+}
 
-let compChoice = result;
-
-// CALCULATE result based on userChoice and compChoice
-
-function compete() {
+function playRound(humanChoice, computerChoice) {
     let win = "You win!";
     let loss = "You lose!";
     let tie = "It's a tie!";
 
-    if (userChoice === "ROCK" && compChoice === "ROCK") {
+    if (humanChoice == "ROCK" && computerChoice == "ROCK") {
+        gameNumber +=1;
         result = tie;
-    } else if (userChoice === "ROCK" && compChoice === "PAPER") {
+    } else if (humanChoice == "ROCK" && computerChoice == "PAPER") {
+        computerScore +=1;
+        gameNumber +=1;
         result = loss;
-    } else if (userChoice === "ROCK" && compChoice === "SCISSORS") {
+    } else if (humanChoice == "ROCK" && computerChoice == "SCISSORS") {
+        humanScore +=1;
+        gameNumber +=1;
         result = win;
-    } else if (userChoice === "PAPER" && compChoice === "ROCK") {
+    } else if (humanChoice == "PAPER" && computerChoice == "ROCK") {
+        humanScore +=1;
+        gameNumber +=1;
         result = win;
-    } else if (userChoice === "PAPER" && compChoice === "PAPER") {
+    } else if (humanChoice == "PAPER" && computerChoice == "PAPER") {
+        gameNumber +=1;
         result = tie;
-    } else if (userChoice === "PAPER" && compChoice === "SCISSORS") {
+    } else if (humanChoice == "PAPER" && computerChoice == "SCISSORS") {
+        computerScore +=1;
+        gameNumber +=1;
         result = loss;
-    } else if (userChoice === "SCISSORS" && compChoice === "ROCK") {
+    } else if (humanChoice == "SCISSORS" && computerChoice == "ROCK") {
+        computerScore +=1;
+        gameNumber +=1;
         result = loss;
-    } else if (userChoice === "SCISSORS" && compChoice === "PAPER") {
+    } else if (humanChoice == "SCISSORS" && computerChoice == "PAPER") {
+        humanScore +=1;
+        gameNumber +=1;
         result = win;
-    } else if (userChoice === "SCISSORS" && compChoice === "SCISSORS") {
+    } else if (humanChoice == "SCISSORS" && computerChoice == "SCISSORS") {
+        gameNumber +=1;
         result = tie;
     } else {
-        result = "";
+        result = "?";
     }
 
     return result;
 }
+    do {
+    const humanSelection = getHumanChoice();
+    console.log("You have chosen " + humanSelection + "!");
 
-// SHOW result
-// This will need to be replaced once the game moves beyond the console
+    const computerSelection = getComputerChoice();
+    console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
 
-if (choiceValid == true) {
-console.log (compete());
-} else {}
+    console.log (playRound(humanSelection, computerSelection));
 
-// GET play again?
+    console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
+    }
+    while (
+        gameNumber < 5
+    )
 
-console.log("If you would like to try again, please refresh the page.");
+    if (humanScore > computerScore) {
+        winner = "You win the game!"
+    } else if (humanScore < computerScore) {
+        winner = "RPS Bot wins the game!"
+    } else {
+        winner = "It's a tie game!"
+    }
+
+    return "The final score is: You " + humanScore + ", RPS Bot " + computerScore +"! " + winner;
+
+}
+
+console.log(playGame());
