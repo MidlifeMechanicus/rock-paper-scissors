@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getHumanChoice () {
 
     let humanChoice = "";
@@ -45,18 +48,24 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == "ROCK" && computerChoice == "ROCK") {
         result = tie;
     } else if (humanChoice == "ROCK" && computerChoice == "PAPER") {
+        computerScore +=1;
         result = loss;
     } else if (humanChoice == "ROCK" && computerChoice == "SCISSORS") {
+        humanScore +=1;
         result = win;
     } else if (humanChoice == "PAPER" && computerChoice == "ROCK") {
+        humanScore +=1;
         result = win;
     } else if (humanChoice == "PAPER" && computerChoice == "PAPER") {
         result = tie;
     } else if (humanChoice == "PAPER" && computerChoice == "SCISSORS") {
+        computerScore +=1;
         result = loss;
     } else if (humanChoice == "SCISSORS" && computerChoice == "ROCK") {
+        computerScore +=1;
         result = loss;
     } else if (humanChoice == "SCISSORS" && computerChoice == "PAPER") {
+        humanScore +=1;
         result = win;
     } else if (humanChoice == "SCISSORS" && computerChoice == "SCISSORS") {
         result = tie;
@@ -75,8 +84,4 @@ console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
 
 console.log (playRound(humanSelection, computerSelection));
 
-let humanScore = 0;
-let computerScore = 0;
-
-console.log(humanScore);
-console.log(computerScore);
+console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
