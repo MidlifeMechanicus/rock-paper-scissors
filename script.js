@@ -1,21 +1,43 @@
 let humanChoice;
+let computerChoice;
+
+const humanChoiceDisplay = document.querySelector("#humanChoiceDisplay");
+
+const computerChoiceDisplay = document.querySelector("#computerChoiceDisplay");
+
+const resultDisplay = document.querySelector("#resultDisplay");
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
-    // alert("Hello World!");
     humanChoice = "ROCK";
-    console.log(playRound(humanChoice, getComputerChoice()));
+    humanChoiceDisplay.textContent = humanChoice;
+    computerChoice = getComputerChoice();
+    computerChoiceDisplay.textContent = computerChoice;
+    console.log(playRound(humanChoice, computerChoice));
+    resultDisplay.textContent = result;
 })
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
-    alert("Hello World!");
+    humanChoice = "PAPER";
+    humanChoiceDisplay.textContent = humanChoice;
+    computerChoice = getComputerChoice();
+    computerChoiceDisplay.textContent = computerChoice;
+    console.log(playRound(humanChoice, computerChoice));
+    resultDisplay.textContent = result;
 })
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
-    alert("Hello World!");
+    humanChoice = "SCISSORS";
+    humanChoiceDisplay.textContent = humanChoice;
+    computerChoice = getComputerChoice();
+    computerChoiceDisplay.textContent = computerChoice;
+    console.log(playRound(humanChoice, computerChoice));
+    resultDisplay.textContent = result;
 })
+
+
 
 // function playGame() {
 
