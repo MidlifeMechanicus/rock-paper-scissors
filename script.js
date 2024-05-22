@@ -1,11 +1,22 @@
 let humanChoice;
 let computerChoice;
 
+let humanScore = 0;
+let computerScore = 0;
+let gameNumber=0;
+let winner;
+
 const humanChoiceDisplay = document.querySelector("#humanChoiceDisplay");
 
 const computerChoiceDisplay = document.querySelector("#computerChoiceDisplay");
 
 const resultDisplay = document.querySelector("#resultDisplay");
+
+const humanScoreDisplay = document.querySelector("#humanScoreDisplay");
+
+const computerScoreDisplay = document.querySelector("#computerScoreDisplay");
+
+const matchResultDisplay = document.querySelector("#matchResultDisplay");
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
@@ -41,10 +52,7 @@ scissors.addEventListener("click", () => {
 
 // function playGame() {
 
-    let humanScore = 0;
-    let computerScore = 0;
-    let gameNumber=0;
-    let winner;
+    
     
     // function getHumanChoice () {
     // 
@@ -130,7 +138,6 @@ scissors.addEventListener("click", () => {
         return result;
     }
 
-    console.log(playRound("ROCK", getComputerChoice()));
         // do {
         // const humanSelection = humanChoice;
         // console.log("You have chosen " + humanSelection + "!");
