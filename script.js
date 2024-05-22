@@ -1,96 +1,118 @@
-// GET user choice of rock, paper, or scissors
+function playGame() {
 
-let userInput = prompt("Please choose rock, paper, or scissors.");
-
-let userChoice = userInput.toUpperCase();
-
-// CHECK input is valid
-
-if (userChoice === "ROCK" || userChoice === "PAPER" || userChoice === "SCISSORS") {
-    userChoiceConfirm = "You have chosen " + userChoice + "!"
-    choiceValid = true;
-} else {
-    userChoiceConfirm = userChoice + " is not a valid choice!"
-    choiceValid = false;
-}
-
-// SHOW response to user
-
-console.log(userChoiceConfirm);
-
-// GET random computer choice of rock, paper or scissors
-
-
-function getCompChoice () {
-    if (choiceValid == true) {
-
+    let humanScore = 0;
+    let computerScore = 0;
+    let gameNumber=0;
+    let winner;
+    
+    function getHumanChoice () {
+    
+        let humanChoice = "";
+    
+        do {
+            let humanInput = prompt("Please choose rock, paper, or scissors.");
+            let humanChoice = humanInput.toUpperCase();
+    
+            if (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS") {
+                alert("Your choice is not a valid option. Please try again.");
+            } else {
+            return humanChoice;
+            }
+        } 
+        while (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS");
+        
+        return humanChoice;
+    }
+    
+    function getComputerChoice () {
+        
         function getRandom() {
             const minValue = Math.ceil(1);
             const maxValue = Math.floor(3);
             return Math.floor(Math.random() * (maxValue - minValue +1) + minValue);
         }
-
-        if (getRandom() === 1) {
-            result = "ROCK";
-        } else if (getRandom() === 2) {
-            result = "PAPER";
+        
+        if (getRandom() == 1) {
+            computerChoice = "ROCK";
+        } else if (getRandom() == 2) {
+            computerChoice = "PAPER";
         } else {
-            // test === 3
-            result = "SCISSORS";
+            // test == 3
+            computerChoice = "SCISSORS";
         }
-
-        return "BeepBoop! RPS Bot has chosen " + result + "!";
-    } else {
-        return result = "RPS Bot won't choose until you have!";
+    
+        return computerChoice;
     }
-}
-
-// SHOW user computer choice
-// Will need to be changed when update to GUI. 
-
-console.log(getCompChoice());
-
-let compChoice = result;
-
-// CALCULATE result based on userChoice and compChoice
-
-function compete() {
-    let win = "You win!";
-    let loss = "You lose!";
-    let tie = "It's a tie!";
-
-    if (userChoice === "ROCK" && compChoice === "ROCK") {
-        result = tie;
-    } else if (userChoice === "ROCK" && compChoice === "PAPER") {
-        result = loss;
-    } else if (userChoice === "ROCK" && compChoice === "SCISSORS") {
-        result = win;
-    } else if (userChoice === "PAPER" && compChoice === "ROCK") {
-        result = win;
-    } else if (userChoice === "PAPER" && compChoice === "PAPER") {
-        result = tie;
-    } else if (userChoice === "PAPER" && compChoice === "SCISSORS") {
-        result = loss;
-    } else if (userChoice === "SCISSORS" && compChoice === "ROCK") {
-        result = loss;
-    } else if (userChoice === "SCISSORS" && compChoice === "PAPER") {
-        result = win;
-    } else if (userChoice === "SCISSORS" && compChoice === "SCISSORS") {
-        result = tie;
-    } else {
-        result = "";
+    
+    function playRound(humanChoice, computerChoice) {
+        let win = "You win!";
+        let loss = "You lose!";
+        let tie = "It's a tie!";
+    
+        if (humanChoice == "ROCK" && computerChoice == "ROCK") {
+            gameNumber +=1;
+            result = tie;
+        } else if (humanChoice == "ROCK" && computerChoice == "PAPER") {
+            computerScore +=1;
+            gameNumber +=1;
+            result = loss;
+        } else if (humanChoice == "ROCK" && computerChoice == "SCISSORS") {
+            humanScore +=1;
+            gameNumber +=1;
+            result = win;
+        } else if (humanChoice == "PAPER" && computerChoice == "ROCK") {
+            humanScore +=1;
+            gameNumber +=1;
+            result = win;
+        } else if (humanChoice == "PAPER" && computerChoice == "PAPER") {
+            gameNumber +=1;
+            result = tie;
+        } else if (humanChoice == "PAPER" && computerChoice == "SCISSORS") {
+            computerScore +=1;
+            gameNumber +=1;
+            result = loss;
+        } else if (humanChoice == "SCISSORS" && computerChoice == "ROCK") {
+            computerScore +=1;
+            gameNumber +=1;
+            result = loss;
+        } else if (humanChoice == "SCISSORS" && computerChoice == "PAPER") {
+            humanScore +=1;
+            gameNumber +=1;
+            result = win;
+        } else if (humanChoice == "SCISSORS" && computerChoice == "SCISSORS") {
+            gameNumber +=1;
+            result = tie;
+        } else {
+            result = "?";
+        }
+    
+        return result;
     }
-
-    return result;
-}
-
-// SHOW result
-// This will need to be replaced once the game moves beyond the console
-
-if (choiceValid == true) {
-console.log (compete());
-} else {}
-
-// GET play again?
-
-console.log("If you would like to try again, please refresh the page.");
+        do {
+        const humanSelection = getHumanChoice();
+        console.log("You have chosen " + humanSelection + "!");
+    
+        const computerSelection = getComputerChoice();
+        console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
+    
+        console.log (playRound(humanSelection, computerSelection));
+    
+        console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
+        }
+        while (
+            gameNumber < 5
+        )
+    
+        if (humanScore > computerScore) {
+            winner = "You win the game!"
+        } else if (humanScore < computerScore) {
+            winner = "RPS Bot wins the game!"
+        } else {
+            winner = "It's a tie game!"
+        }
+    
+        return "The final score is: You " + humanScore + ", RPS Bot " + computerScore +"! " + winner;
+    
+    }
+    
+    console.log(playGame());
