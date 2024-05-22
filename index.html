@@ -8,36 +8,32 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <section>
+    <section id="intro">
         RPS Bot has challenged you to a round of Rock, Paper, Scissors! RPS Bot predicts they will prevent you winning almost two thirds of the time!
          Format is best of five.
     </section>
-    <section>
+    <section id="choices">
         <button id="rock" type="button">ROCK</button>
         <button id="paper" type="button">PAPER</button>
         <button id="scissors" type="button">SCISSORS</button>
     </section>
-    <section>
+    <section id="game">
         <section>
-            You have chosen:
-            <span id="humanChoiceDisplay"></span>
+            <p>You have chosen: <span id="humanChoiceDisplay"></span></p>
         </section>
         <section>
-            RPS Bot has chosen:
-            <span id="computerChoiceDisplay"></span>
+            <p>RPS Bot has chosen: <span id="computerChoiceDisplay"></span></p>
         </section>
         <section>
-            Result:
-            <span id="resultDisplay"></span>
+            <p>Result:
+            <span id="resultDisplay"></span></p>
         </section>
-        <section>
-            Your score:
-            <span id="humanScoreDisplay"></span>
-            RPS Bot's score:
-            <span id="computerScoreDisplay"></span>
-            Games played:
-            <span id="gameNumberDisplay"></span>
-        </section>
+    </section>
+    <section id="match">
+        <p>Your score: <span id="humanScoreDisplay"></span></p>
+        <p>RPS Bot's score: <span id="computerScoreDisplay"></span></p>
+        <p>Games played:
+        <span id="gameNumberDisplay"></span></p>
     </section>
 </body>
 </html>
