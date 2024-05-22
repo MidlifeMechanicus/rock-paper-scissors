@@ -1,28 +1,43 @@
-function playGame() {
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+    alert("Hello World!");
+})
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+    alert("Hello World!");
+})
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+    alert("Hello World!");
+})
+
+// function playGame() {
 
     let humanScore = 0;
     let computerScore = 0;
     let gameNumber=0;
     let winner;
     
-    function getHumanChoice () {
-    
-        let humanChoice = "";
-    
-        do {
-            let humanInput = prompt("Please choose rock, paper, or scissors.");
-            let humanChoice = humanInput.toUpperCase();
-    
-            if (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS") {
-                alert("Your choice is not a valid option. Please try again.");
-            } else {
-            return humanChoice;
-            }
-        } 
-        while (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS");
-        
-        return humanChoice;
-    }
+    // function getHumanChoice () {
+    // 
+        // let humanChoice = "";
+    // 
+        // do {
+            // let humanInput = prompt("Please choose rock, paper, or scissors.");
+            // let humanChoice = humanInput.toUpperCase();
+    // 
+            // if (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS") {
+                // alert("Your choice is not a valid option. Please try again.");
+            // } else {
+            // return humanChoice;
+            // }
+        // } 
+        // while (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS");
+        // 
+        // return humanChoice;
+    // }
     
     function getComputerChoice () {
         
@@ -111,8 +126,8 @@ function playGame() {
             winner = "It's a tie game!"
         }
     
-        return "The final score is: You " + humanScore + ", RPS Bot " + computerScore +"! " + winner;
+        // return "The final score is: You " + humanScore + ", RPS Bot " + computerScore +"! " + winner;
     
-    }
+    // }
     
-    console.log(playGame());
+    // console.log(playGame());
