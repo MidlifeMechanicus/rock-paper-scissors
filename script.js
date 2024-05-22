@@ -132,12 +132,6 @@ function playRound(humanChoice, computerChoice) {
 
     return result;
 }
-    do {
-    const humanSelection = getHumanChoice();
-    console.log("You have chosen " + humanSelection + "!");
-
-    const computerSelection = getComputerChoice();
-    console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
 
 function getMatchResult() {
     let currentGameNumber = gameNumber
