@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+    /* The alternative is- to set both body and html height to 100%. Both need to set to this level because the body is within the html container, meaning it takes up 100% of what the container allows, which can be less that 100% of the possible space. Using vh units allows us to make only single change. */
+
+    #intro {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #choices {
+        display: flex;
+        justify-content: space-evenly;
+
+        button {
+            height: 50px;
+            width: 100px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    #game, #match {
+        font-size: 20px;
+        text-align: center;
+        
+        p {
+            margin: 10px;
+        }
+    }
+}

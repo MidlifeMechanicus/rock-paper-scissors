@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- For this excercise the entire game is to be played in the console, meaning the page itself will be blank. However, it seems like a fun additional exercise to come back at some point and set up a GUI. 
-    -->
-
-    <!-- My first run at this problem was completely blind; I did not read any of the instructions as I wanted to try this without hints. However, after completing the project I went back to look at the assignment instructions and I can see that:
-    
-    a) They wanted me to use specific variable names for certain variables, and
-    
-    b) They wanted me to include certain features that I did not include, and some features that I did include were beyond what they wanted.
-
-    Accordingly, I am updating my project.-->
+    <section id="intro">
+        RPS Bot has challenged you to a round of Rock, Paper, Scissors! RPS Bot predicts they will prevent you winning almost two thirds of the time!
+         Format is best of five.
+    </section>
+    <section id="choices">
+        <button id="rock" type="button">ROCK</button>
+        <button id="paper" type="button">PAPER</button>
+        <button id="scissors" type="button">SCISSORS</button>
+    </section>
+    <section id="game">
+        <section>
+            <p>You have chosen: <span id="humanChoiceDisplay"></span></p>
+        </section>
+        <section>
+            <p>RPS Bot has chosen: <span id="computerChoiceDisplay"></span></p>
+        </section>
+        <section>
+            <p>Result:
+            <span id="resultDisplay"></span></p>
+        </section>
+    </section>
+    <section id="match">
+        <p>Your score: <span id="humanScoreDisplay"></span></p>
+        <p>RPS Bot's score: <span id="computerScoreDisplay"></span></p>
+        <p>Games played:
+        <span id="gameNumberDisplay"></span></p>
+    </section>
 </body>
 </html>

@@ -1,28 +1,72 @@
-function playGame() {
+
+let humanChoice;
+let computerChoice;
 
 let humanScore = 0;
 let computerScore = 0;
 let gameNumber=0;
 let winner;
 
-function getHumanChoice () {
+const humanChoiceDisplay = document.querySelector("#humanChoiceDisplay");
 
-    let humanChoice = "";
+const computerChoiceDisplay = document.querySelector("#computerChoiceDisplay");
 
-    do {
-        let humanInput = prompt("Please choose rock, paper, or scissors.");
-        let humanChoice = humanInput.toUpperCase();
+const resultDisplay = document.querySelector("#resultDisplay");
 
-        if (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS") {
-            alert("Your choice is not a valid option. Please try again.");
-        } else {
-        return humanChoice;
-        }
-    } 
-    while (humanChoice != "ROCK" && humanChoice != "PAPER" && humanChoice != "SCISSORS");
+const humanScoreDisplay = document.querySelector("#humanScoreDisplay");
+
+const computerScoreDisplay = document.querySelector("#computerScoreDisplay");
+
+const gameNumberDisplay = document.querySelector("#gameNumberDisplay");
+
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+    humanChoice = "ROCK";
+    humanChoiceDisplay.textContent = humanChoice;
+    computerChoice = getComputerChoice();
+    computerChoiceDisplay.textContent = computerChoice;
+    playRound(humanChoice, computerChoice);
+    resultDisplay.textContent = result;
+
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
+    gameNumberDisplay.textContent = gameNumber;
+
+    getMatchResult();
+})
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+    humanChoice = "PAPER";
+    humanChoiceDisplay.textContent = humanChoice;
+    computerChoice = getComputerChoice();
+    computerChoiceDisplay.textContent = computerChoice;
+    playRound(humanChoice, computerChoice);
+    resultDisplay.textContent = result;
+
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
+    gameNumberDisplay.textContent = gameNumber;
+
+    getMatchResult();
+})
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+    humanChoice = "SCISSORS";
+    humanChoiceDisplay.textContent = humanChoice;
+    computerChoice = getComputerChoice();
+    computerChoiceDisplay.textContent = computerChoice;
+    playRound(humanChoice, computerChoice);
+    resultDisplay.textContent = result;
+
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
+    gameNumberDisplay.textContent = gameNumber;
+
+    getMatchResult();
+})
     
-    return humanChoice;
-}
 
 function getComputerChoice () {
     
@@ -43,7 +87,7 @@ function getComputerChoice () {
 
     return computerChoice;
 }
-
+    
 function playRound(humanChoice, computerChoice) {
     let win = "You win!";
     let loss = "You lose!";
@@ -95,24 +139,19 @@ function playRound(humanChoice, computerChoice) {
     const computerSelection = getComputerChoice();
     console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
 
-    console.log (playRound(humanSelection, computerSelection));
-
-    console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
-    }
-    while (
-        gameNumber < 5
-    )
-
-    if (humanScore > computerScore) {
-        winner = "You win the game!"
-    } else if (humanScore < computerScore) {
-        winner = "RPS Bot wins the game!"
-    } else {
-        winner = "It's a tie game!"
-    }
-
-    return "The final score is: You " + humanScore + ", RPS Bot " + computerScore +"! " + winner;
-
+function getMatchResult() {
+    let currentGameNumber = gameNumber
+    if (currentGameNumber >= 5) {
+        if (humanScore > computerScore) {
+            winner = "You win the match!"
+        } else if (humanScore < computerScore) {
+            winner = "RPS Bot wins the match!"
+        } else {
+            winner = "It's a tied match!"
+        }
+        alert(winner);
+        humanScore = 0;
+        computerScore = 0;
+        gameNumber=0;
+    } else {};
 }
-
-console.log(playGame());
