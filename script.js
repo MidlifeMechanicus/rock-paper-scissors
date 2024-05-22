@@ -24,7 +24,7 @@ rock.addEventListener("click", () => {
     humanChoiceDisplay.textContent = humanChoice;
     computerChoice = getComputerChoice();
     computerChoiceDisplay.textContent = computerChoice;
-    console.log(playRound(humanChoice, computerChoice));
+    playRound(humanChoice, computerChoice);
     resultDisplay.textContent = result;
 
     humanScoreDisplay.textContent = humanScore;
@@ -40,7 +40,7 @@ paper.addEventListener("click", () => {
     humanChoiceDisplay.textContent = humanChoice;
     computerChoice = getComputerChoice();
     computerChoiceDisplay.textContent = computerChoice;
-    console.log(playRound(humanChoice, computerChoice));
+    playRound(humanChoice, computerChoice);
     resultDisplay.textContent = result;
 
     humanScoreDisplay.textContent = humanScore;
@@ -56,7 +56,7 @@ scissors.addEventListener("click", () => {
     humanChoiceDisplay.textContent = humanChoice;
     computerChoice = getComputerChoice();
     computerChoiceDisplay.textContent = computerChoice;
-    console.log(playRound(humanChoice, computerChoice));
+    playRound(humanChoice, computerChoice);
     resultDisplay.textContent = result;
 
     humanScoreDisplay.textContent = humanScore;
