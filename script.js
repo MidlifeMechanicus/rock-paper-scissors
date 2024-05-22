@@ -1,3 +1,4 @@
+
 let humanChoice;
 let computerChoice;
 
@@ -66,6 +67,7 @@ scissors.addEventListener("click", () => {
     getMatchResult();
 })
     
+
 function getComputerChoice () {
     
     function getRandom() {
@@ -130,6 +132,12 @@ function playRound(humanChoice, computerChoice) {
 
     return result;
 }
+    do {
+    const humanSelection = getHumanChoice();
+    console.log("You have chosen " + humanSelection + "!");
+
+    const computerSelection = getComputerChoice();
+    console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
 
 function getMatchResult() {
     let currentGameNumber = gameNumber
