@@ -1,6 +1,10 @@
+let humanChoice;
+
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
-    alert("Hello World!");
+    // alert("Hello World!");
+    humanChoice = "ROCK";
+    console.log(playRound(humanChoice, getComputerChoice()));
 })
 
 const paper = document.querySelector("#paper");
@@ -103,28 +107,30 @@ scissors.addEventListener("click", () => {
     
         return result;
     }
-        do {
-        const humanSelection = getHumanChoice();
-        console.log("You have chosen " + humanSelection + "!");
-    
-        const computerSelection = getComputerChoice();
-        console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
-    
-        console.log (playRound(humanSelection, computerSelection));
-    
-        console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
-        }
-        while (
-            gameNumber < 5
-        )
-    
-        if (humanScore > computerScore) {
-            winner = "You win the game!"
-        } else if (humanScore < computerScore) {
-            winner = "RPS Bot wins the game!"
-        } else {
-            winner = "It's a tie game!"
-        }
+
+    console.log(playRound("ROCK", getComputerChoice()));
+        // do {
+        // const humanSelection = humanChoice;
+        // console.log("You have chosen " + humanSelection + "!");
+    // 
+        // const computerSelection = getComputerChoice();
+        // console.log("BeepBoop! RPS Bot has chosen " + computerSelection + "!");
+    // 
+        // console.log (playRound(humanSelection, computerSelection));
+    // 
+        // console.log("The score is: You " + humanScore + ", RPS Bot " + computerScore +"!");
+        // }
+        // while (
+            // gameNumber < 1
+        // )
+    // 
+        // if (humanScore > computerScore) {
+            // winner = "You win the game!"
+        // } else if (humanScore < computerScore) {
+            // winner = "RPS Bot wins the game!"
+        // } else {
+            // winner = "It's a tie game!"
+        // }
     
         // return "The final score is: You " + humanScore + ", RPS Bot " + computerScore +"! " + winner;
     
